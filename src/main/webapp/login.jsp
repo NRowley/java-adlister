@@ -15,16 +15,16 @@
 <form method="POST" action="${pageContext.request.contextPath}/login.jsp">
     <label for="username"></label><input type="text" id="username" name="username" placeholder="Enter Username">
     <br>
-    <label for="password"></label><input type="text" id="password" name="password" placeholder="Enter Password">
+    <label for="password"></label><input type="password" id="password" name="password" placeholder="Enter Password">
     <br>
     <input type="submit" id="submit">
 </form>
+
 <%@ include file="partials/footer.jsp" %>
 <c:choose>
     <c:when test="${param.username == 'admin' && param.password == 'password'}">
         <%response.sendRedirect("/profile.jsp"); %>
     </c:when>
-
 </c:choose>
 </body>
 </html>
