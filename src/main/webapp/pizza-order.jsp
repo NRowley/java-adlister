@@ -31,10 +31,10 @@
     <label for="bbq">bbq</label><input type="radio" id="bbq" name="sauce" value="bbq">
 
     <h4>Toppings</h4>
-    <label for="pepperoni">Pepperoni</label><input type="checkbox" id="pepperoni" name="pepperoni" value="pepperoni">
-    <label for="sausage">Sausage</label><input type="checkbox" id="sausage" name="sausage" value="sausage">
-    <label for="peppers">Peppers</label><input type="checkbox" id="peppers" name="peppers" value="peppers">
-    <label for="olives">Olives</label><input type="checkbox" id="olives" name="olives" value="olives">
+    <label for="pepperoni">Pepperoni</label><input type="checkbox" id="pepperoni" name="toppings" value="pepperoni">
+    <label for="sausage">Sausage</label><input type="checkbox" id="sausage" name="toppings" value="sausage">
+    <label for="peppers">Peppers</label><input type="checkbox" id="peppers" name="toppings" value="peppers">
+    <label for="olives">Olives</label><input type="checkbox" id="olives" name="toppings" value="olives">
     <br>
     <input type="submit">
 </form>

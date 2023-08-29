@@ -12,7 +12,7 @@
 </head>
 <body>
 <jsp:include page="partials/navbar.jsp"/>
-<form method="POST" action="${pageContext.request.contextPath}/pickcolor">
+<form method="POST" action="pickcolor">
     <label for="color-pick"></label><input type="text" name="color-pick" id="color-pick" placeholder="Enter a Color">
     <input type="submit">
 </form>

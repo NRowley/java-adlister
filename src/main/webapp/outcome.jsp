@@ -21,11 +21,5 @@
         <h1>INCORRECT</h1>
     </c:when>
 </c:choose>
-<%--<form method="GET" action="${pageContext.request.contextPath}/correct">--%>
-
-<%--</form>--%>
-<%--<form method="GET" action="${pageContext.request.contextPath}/incorrect">--%>
-
-<%--</form>--%>
 </body>
 </html>

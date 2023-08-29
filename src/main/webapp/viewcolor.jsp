@@ -9,11 +9,15 @@
 <html>
 <head>
     <title>Title</title>
+<style>
+    body {
+        background-color: ${backgroundColor};
+    }
+</style>
 </head>
 <body>
 <jsp:include page="partials/navbar.jsp" />
-<form method="get" action="${pageContext.request.contextPath}/viewcolor">
 
-</form>
+
 </body>
 </html>
