@@ -1,4 +1,5 @@
 import java.sql.DriverManager;
+import com.mysql.cj.jdbc.Driver;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,6 +8,7 @@ public class MySQLAdsDao implements Ads {
     private Connection connection;
 
     public MySQLAdsDao(Config config) throws SQLException {
+        DriverManager.registerDriver(new Driver());
         this.connection = DriverManager.getConnection(
                 config.getUrl(),
                 config.getUser(),
