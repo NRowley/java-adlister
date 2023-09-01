@@ -1,3 +1,8 @@
+package dao;
+
+import controllers.Config;
+import dao.MySQLAdsDao;
+
 import java.sql.SQLException;
 
 public class DaoFactory {

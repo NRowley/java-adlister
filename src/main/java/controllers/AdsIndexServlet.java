@@ -1,3 +1,7 @@
+package controllers;
+
+import dao.MySQLAdsDao;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -7,11 +11,11 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet(name = "AdsIndexServlet", urlPatterns = "/ads")
+@WebServlet(name = "controllers.AdsIndexServlet", urlPatterns = "/ads")
 public class AdsIndexServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-//            request.setAttribute("ads", DaoFactory.getAdsDao().all());
+//            request.setAttribute("ads", dao.DaoFactory.getAdsDao().all());
             request.setAttribute("ads", new MySQLAdsDao(new Config()).all());
         } catch (SQLException e) {
             throw new RuntimeException(e);

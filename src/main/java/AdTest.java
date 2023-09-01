@@ -1,3 +1,7 @@
+import controllers.Config;
+import dao.MySQLAdsDao;
+import models.Ad;
+
 import java.sql.SQLException;
 import java.util.List;
 
