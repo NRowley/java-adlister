@@ -9,6 +9,7 @@ public class MySQLAdsDao implements Ads {
 
     public MySQLAdsDao(Config config) throws SQLException {
         DriverManager.registerDriver(new Driver());
+
         this.connection = DriverManager.getConnection(
                 config.getUrl(),
                 config.getUser(),
@@ -28,10 +29,18 @@ public class MySQLAdsDao implements Ads {
 
     @Override
     public Long insert(Ad ad) throws SQLException {
-        String insertAdStatement = "INSERT INTO ads (title, description) values (" + ad.getTitle() + ", " + ad.getDescription() + ")";
+//        String insertAdStatement = "INSERT INTO ads (title, description) values (" + ad.getTitle() + ", " + ad.getDescription() + ")";
+
+        String insertAdStatement = String.format("INSERT INTO ads (user_id, title, description) VALUES (%d, '%s', '%s');", ad.getUserId(), ad.getTitle(), ad.getDescription());
+        System.out.println(insertAdStatement);
+//
         Statement stmt = this.connection.createStatement();
+
         stmt.executeUpdate(insertAdStatement, Statement.RETURN_GENERATED_KEYS);
         ResultSet rs = stmt.getGeneratedKeys();
+        if (rs.next()) {
+            System.out.println("Inserted a new record! New id: " + rs.getLong(1));
+        }
         return rs.getLong(1);
     }
 }

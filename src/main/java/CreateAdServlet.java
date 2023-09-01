@@ -20,7 +20,8 @@ public class CreateAdServlet extends HttpServlet {
             request.getParameter("description")
         );
         try {
-            DaoFactory.getAdsDao().insert(ad);
+//            DaoFactory.getAdsDao().insert(ad);
+            new MySQLAdsDao(new Config()).insert(ad);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

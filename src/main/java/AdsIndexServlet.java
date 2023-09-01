@@ -11,7 +11,8 @@ import java.util.List;
 public class AdsIndexServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            request.setAttribute("ads", DaoFactory.getAdsDao().all());
+//            request.setAttribute("ads", DaoFactory.getAdsDao().all());
+            request.setAttribute("ads", new MySQLAdsDao(new Config()).all());
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
